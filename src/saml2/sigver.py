@@ -882,10 +882,10 @@ class CryptoBackendXmlSec1(CryptoBackend):
         com_list = [
             self.xmlsec,
             '--verify',
+            '--enabled-key-data', 'x509',
             '--enabled-reference-uris', 'empty,same-doc',
             '--pubkey-cert-{type}'.format(type=cert_type), cert_file,
             '--id-attr:{id_attr_name}'.format(id_attr_name=id_attr),
-            '--enabled-key-data', 'x509',
             node_name,
         ]
 
